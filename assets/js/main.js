@@ -53,6 +53,18 @@
       revealEls.forEach(function (el) { el.classList.add('is-visible'); });
     }
 
+    // Gallery filter chips: visual active state only (no data-side category filter)
+    var chips = qa('[data-chip]');
+    if (chips.length) {
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          chips.forEach(function (c) { c.classList.remove('is-active'); });
+          chip.classList.add('is-active');
+        });
+      });
+      chips[0].classList.add('is-active');
+    }
+
     // Contact form: client-side only — show a thank-you note, no data is sent
     var form = document.querySelector('[data-form]');
     if (form) {

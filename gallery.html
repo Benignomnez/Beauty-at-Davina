@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gallery | Beauty at Davina</title>
-<meta name="description" content="Browse before-and-after results and a look inside Beauty at Davina.">
+<meta name="description" content="Real results, honestly shown — browse before-and-after transformations and a look inside Beauty at Davina.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://unpkg.com/lucide@1.24.0/dist/umd/lucide.js" defer></script>
 </head>
 <body data-page="gallery">
 
@@ -38,14 +38,72 @@
 
 <header class="page-hero">
   <div class="page-hero__crumb"><a href="index.html">Home</a> <span class="page-hero__crumb-sep">/</span> Gallery</div>
-  <div class="page-hero__eyebrow">Gallery</div>
-  <h1 class="page-hero__title">See the <em>results</em>.</h1>
-  <p class="page-hero__lead">Our gallery of results and studio photos is coming soon.</p>
+  <div class="page-hero__eyebrow">Gallery &amp; Results</div>
+  <h1 class="page-hero__title">Real results, <em>honestly</em> shown.</h1>
 </header>
 
-<section class="stub-section" data-reveal>
-  <div class="stub-card">
-    <p>Our gallery is being curated. Follow us on social media or contact us to see recent results.</p>
+<section data-reveal class="section" style="padding-bottom:0;">
+  <div class="gallery-chips">
+    <button class="gallery-chip" data-chip type="button">All</button>
+    <button class="gallery-chip" data-chip type="button">Injectables</button>
+    <button class="gallery-chip" data-chip type="button">Skin &amp; Laser</button>
+    <button class="gallery-chip" data-chip type="button">Wellness</button>
+    <button class="gallery-chip" data-chip type="button">The Clinic</button>
+  </div>
+</section>
+
+<section data-reveal class="section" style="padding-bottom:clamp(48px,6vw,80px);">
+  <div class="gallery-grid">
+    <div class="gallery-grid__item"><span class="img-placeholder">Botox</span><span class="gallery-grid__tag">Botox</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">The Clinic</span><span class="gallery-grid__tag">The Clinic</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">Fillers</span><span class="gallery-grid__tag">Fillers</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">IV Therapy</span><span class="gallery-grid__tag">IV Therapy</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">Skincare</span><span class="gallery-grid__tag">Skincare</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">Lips</span><span class="gallery-grid__tag">Lips</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">Laser</span><span class="gallery-grid__tag">Laser</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">The Clinic</span><span class="gallery-grid__tag">The Clinic</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">PRP</span><span class="gallery-grid__tag">PRP</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">Skincare</span><span class="gallery-grid__tag">Skincare</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">Team</span><span class="gallery-grid__tag">Team</span></div>
+    <div class="gallery-grid__item"><span class="img-placeholder">Wellness</span><span class="gallery-grid__tag">Wellness</span></div>
+  </div>
+</section>
+
+<section data-reveal class="gallery-ba-section">
+  <div class="section section-pad-lg">
+    <div class="eyebrow eyebrow--on-dark">Before &amp; After</div>
+    <div class="eyebrow-block"><h2 style="color:var(--footer-heading);">Natural transformations, patient-approved</h2></div>
+    <div class="gallery-ba-grid">
+      <div class="gallery-ba-card">
+        <div class="gallery-ba-card__images">
+          <div class="gallery-ba-card__img"><span class="img-placeholder">Before</span><span class="gallery-ba-card__tag">Before</span></div>
+          <div class="gallery-ba-card__img"><span class="img-placeholder">After</span><span class="gallery-ba-card__tag gallery-ba-card__tag--after">After</span></div>
+        </div>
+        <div class="gallery-ba-card__body"><h3>Lip Enhancement</h3><p>Subtle volume and definition, one session.</p></div>
+      </div>
+      <div class="gallery-ba-card">
+        <div class="gallery-ba-card__images">
+          <div class="gallery-ba-card__img"><span class="img-placeholder">Before</span><span class="gallery-ba-card__tag">Before</span></div>
+          <div class="gallery-ba-card__img"><span class="img-placeholder">After</span><span class="gallery-ba-card__tag gallery-ba-card__tag--after">After</span></div>
+        </div>
+        <div class="gallery-ba-card__body"><h3>Botox &mdash; Forehead</h3><p>Softened lines while keeping natural movement.</p></div>
+      </div>
+      <div class="gallery-ba-card">
+        <div class="gallery-ba-card__images">
+          <div class="gallery-ba-card__img"><span class="img-placeholder">Before</span><span class="gallery-ba-card__tag">Before</span></div>
+          <div class="gallery-ba-card__img"><span class="img-placeholder">After</span><span class="gallery-ba-card__tag gallery-ba-card__tag--after">After</span></div>
+        </div>
+        <div class="gallery-ba-card__body"><h3>Cheek Filler</h3><p>Restored midface volume and contour.</p></div>
+      </div>
+    </div>
+    <p class="gallery-disclaimer">Results vary by individual. Photos shown with patient consent and represent real outcomes at Beauty at Davina.</p>
+  </div>
+</section>
+
+<section data-reveal class="section section-pad-lg">
+  <div class="cta-banner cta-banner--soft">
+    <h2>Your transformation could be next.</h2>
+    <a href="contact.html" class="btn-pill btn-pill--dark" style="margin-top:28px;">Book a Consultation <i data-lucide="arrow-right"></i></a>
   </div>
 </section>
 
