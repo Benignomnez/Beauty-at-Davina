@@ -301,6 +301,7 @@ img { max-width: 100%; display: block; }
 }
 .field { display: block; }
 .field + .field { margin-top: 16px; }
+.form-grid > .field + .field { margin-top: 0; }
 .field__label {
   display: block;
   font-size: 12.5px;
