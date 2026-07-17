@@ -54,6 +54,24 @@ a:hover { color: var(--gold); }
 img { max-width: 100%; display: block; }
 .lucide { stroke-width: 1.4; }
 
+.skip-link {
+  position: absolute;
+  left: 50%;
+  top: -80px;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: var(--green);
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 0 0 12px 12px;
+  transition: top .2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 .container {
   max-width: 1320px;
   margin: 0 auto;
@@ -350,6 +368,15 @@ textarea.field__input { resize: vertical; }
   color: var(--green);
 }
 .form-note.is-visible { display: block; }
+
+/* Honeypot: invisible to real visitors, catnip for basic bots */
+.field-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 .contact-info {
   display: flex;

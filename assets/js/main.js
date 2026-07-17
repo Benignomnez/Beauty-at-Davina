@@ -16,7 +16,10 @@
     var page = document.body.getAttribute('data-page');
     if (page) {
       var current = document.querySelector('[data-page-link="' + page + '"]');
-      if (current) current.classList.add('is-active');
+      if (current) {
+        current.classList.add('is-active');
+        current.setAttribute('aria-current', 'page');
+      }
     }
     if (nav) {
       var onScroll = function () {
@@ -70,6 +73,11 @@
     if (form) {
       form.addEventListener('submit', function (ev) {
         ev.preventDefault();
+        // Honeypot: a real visitor never sees or fills this field. If it's
+        // filled, silently drop the submission instead of showing success —
+        // revealing the catch just teaches bots to skip that field next time.
+        var honeypot = form.querySelector('input[name="company"]');
+        if (honeypot && honeypot.value) return;
         var note = form.querySelector('[data-formnote]');
         if (note) note.classList.add('is-visible');
         Array.prototype.slice.call(form.querySelectorAll('input, textarea, select, button'))

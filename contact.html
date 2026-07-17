@@ -5,12 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact | Beauty at Davina</title>
 <meta name="description" content="Tell us a little about your goals and we'll reach out to schedule your complimentary consultation at Beauty at Davina in Homestead, FL.">
+<link rel="canonical" href="https://www.beautyatdavina.com/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beauty at Davina">
+<meta property="og:title" content="Contact | Beauty at Davina">
+<meta property="og:description" content="Tell us a little about your goals and we'll reach out to schedule your complimentary consultation at Beauty at Davina in Homestead, FL.">
+<meta property="og:url" content="https://www.beautyatdavina.com/contact.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Contact | Beauty at Davina">
+<meta name="twitter:description" content="Tell us a little about your goals and we'll reach out to schedule your complimentary consultation at Beauty at Davina in Homestead, FL.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="https://unpkg.com/lucide@1.24.0/dist/umd/lucide.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Beauty at Davina",
+  "url": "https://www.beautyatdavina.com/",
+  "telephone": "+1-305-555-0142",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Krome Ave",
+    "addressLocality": "Homestead",
+    "addressRegion": "FL",
+    "postalCode": "33030",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 25.4687,
+    "longitude": -80.4776
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "10:00",
+      "closes": "15:00"
+    }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Homestead" },
+    { "@type": "City", "name": "Cutler Bay" },
+    { "@type": "City", "name": "West Kendall" },
+    { "@type": "AdministrativeArea", "name": "Miami-Dade County" }
+  ]
+}
+</script>
 </head>
 <body data-page="contact">
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="site-nav" data-nav>
   <a href="index.html" class="site-nav__brand">
@@ -23,6 +76,7 @@
     <a data-page-link="about" class="site-nav__link" href="about.html">About</a>
     <a data-page-link="team" class="site-nav__link" href="team.html">Team</a>
     <a data-page-link="gallery" class="site-nav__link" href="gallery.html">Gallery</a>
+    <a data-page-link="before-after" class="site-nav__link" href="before-after.html">Before &amp; After</a>
     <a data-page-link="contact" class="site-nav__cta" href="contact.html">Book a Consultation</a>
   </div>
   <button class="site-nav__burger" type="button" aria-label="Menu" data-burger><i data-lucide="menu"></i></button>
@@ -33,10 +87,11 @@
   <a href="about.html">About</a>
   <a href="team.html">Team</a>
   <a href="gallery.html">Gallery</a>
+  <a href="before-after.html">Before &amp; After</a>
   <a href="contact.html" class="site-mobile-menu__cta">Book a Consultation</a>
 </div>
 
-<header class="page-hero">
+<header id="main" class="page-hero">
   <div class="page-hero__crumb"><a href="index.html">Home</a> <span class="page-hero__crumb-sep">/</span> Contact</div>
   <div class="page-hero__eyebrow">Book a Consultation</div>
   <h1 class="page-hero__title">Let&rsquo;s begin your <em>journey</em>.</h1>
@@ -46,24 +101,28 @@
 <section class="contact-section">
   <div class="contact-grid">
     <div data-reveal>
-      <form class="contact-form" data-form novalidate>
+      <form class="contact-form" data-form>
+        <label class="field-honeypot" aria-hidden="true">
+          Company
+          <input type="text" name="company" tabindex="-1" autocomplete="off">
+        </label>
         <div class="form-grid">
           <label class="field">
             <span class="field__label">First name</span>
-            <input class="field__input" name="first" required>
+            <input class="field__input" name="first" autocomplete="given-name" required>
           </label>
           <label class="field">
             <span class="field__label">Last name</span>
-            <input class="field__input" name="last" required>
+            <input class="field__input" name="last" autocomplete="family-name" required>
           </label>
         </div>
         <label class="field">
           <span class="field__label">Email</span>
-          <input class="field__input" name="email" type="email" required>
+          <input class="field__input" name="email" type="email" autocomplete="email" required>
         </label>
         <label class="field">
           <span class="field__label">Phone</span>
-          <input class="field__input" name="phone" type="tel">
+          <input class="field__input" name="phone" type="tel" autocomplete="tel">
         </label>
         <label class="field">
           <span class="field__label">Treatment of interest</span>
@@ -179,6 +238,7 @@
           <a href="about.html">About</a>
           <a href="team.html">Team</a>
           <a href="gallery.html">Gallery</a>
+          <a href="before-after.html">Before &amp; After</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>
