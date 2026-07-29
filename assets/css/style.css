@@ -798,6 +798,13 @@ textarea.field__input { resize: vertical; }
 .treatment-row__submeta .eyebrow { margin-bottom: 8px; }
 .treatment-row__subcopy { font-size: 14.5px; color: var(--ink-mute); margin: 0 0 22px; max-width: 62ch; }
 
+.trust-badge { display: flex; align-items: center; gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-soft); }
+.trust-badge__logo { height: 30px; width: auto; object-fit: contain; flex: none; }
+.trust-badge__text { font-size: 12.5px; line-height: 1.45; color: var(--ink-mute); max-width: 40ch; }
+.service-card__trust { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.service-card__trust img { height: 14px; width: auto; object-fit: contain; }
+.service-card__trust span { font-size: 11px; color: var(--muted); }
+
 /* ══════════════════════════════════════════════════════════════════════
    Services page
    ══════════════════════════════════════════════════════════════════════ */
