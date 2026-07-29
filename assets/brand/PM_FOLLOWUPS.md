@@ -9,11 +9,29 @@ Notes for Katherine (PM) after applying the official brand identity to the live 
 - Real logo (`assets/brand/logo/`) swapped in for the text wordmark in every nav and footer.
 - Real NAP data applied sitewide: **925 NE 30 Terrace, Suite 316, Homestead, FL 33033** / **(305) 245-8787**, replacing the placeholder address and phone number.
 - "A service of Davina Medical Care, P.A." added to the footer per the parent-brand relationship in the manual.
-- "Glow In & Glow Out" adopted as the site's organizing framework: Treatments and Services are now split into **Glow Out** (Botox, fillers, lip injections, PRP, medical skincare, laser) and **Glow In** (NAD/Immunity/Get Up and Go IV therapy, weight loss, sexual wellness), and the Home page About section now introduces the concept directly.
+- "Glow In & Glow Out" adopted as the site's organizing framework: Treatments and Services are now split into **Glow Out** (Botox, JUVÉDERM fillers) and **Glow In** (NAD/Immunity/Get Up and Go IV therapy, weight loss, body composition analysis, sexual wellness), and the Home page About section now introduces the concept directly.
 - Real IV therapy menu applied (replacing the generic "IV Therapy" placeholder): **NAD IV Therapy**, **Immunity IV Therapy** ($150 per the Immunity flyer), and **Get Up and Go IV Therapy**.
 - **Dermal Fillers replaced with the real JUVÉDERM® collection** (from `Juvederm Collection Info Sheet.docx`, added to the Drive folder 2026-07-29): all 6 formulations — Ultra XC, Ultra Plus XC, Volbella XC, Vollure XC, Voluma XC, Volux XC — now shown on the Treatments page with their real best-for area and duration. Source notes saved to `assets/brand/reference-docs/juvederm-collection-info-sheet.md`.
 - **Body Composition Analysis added as a new Glow In service** (from the seca mBCA flyers added to the Drive folder the same day), positioned alongside Weight Loss Programs on Treatments and Services. Source notes saved to `assets/brand/reference-docs/seca-mbca-body-composition.md`.
 - **Official BOTOX® Cosmetic and JUVÉDERM® trademark logos added as trust badges**: the real manufacturer logos (pulled from the Drive folder) now appear next to the Botox and Dermal Fillers sections on Treatments, and as small icons on the matching Services cards, to reassure customers these are genuine FDA-approved products rather than substitutes. Logos are used unmodified/unscaled-in-aspect (full lockup, not cropped) per standard trademark-usage practice. Full-size source files kept in `assets/brand/logo/product-logos/`.
+
+## Unverified services removed from the site (2026-07-29)
+
+At the client's request, we audited every service/treatment mentioned anywhere on the site against the actual source documents provided (brand manual, IV therapy flyers, Juvéderm sheet, seca sheet) and **removed everything that had no backing in a real document** — these had been carried over from the original generic design template at project start and were never verified against Beauty at Davina's actual offerings:
+
+- Lip Injections (as a standalone service — see note below)
+- PRP Treatments / PRP Therapy
+- Medical Skincare
+- Laser Treatments / Laser Hair Removal / Laser Skin Treatments / Laser Resurfacing
+- Chemical Peels
+- Microneedling
+- Hair Loss Treatments
+- Vitamin Injections
+- The generic, undifferentiated "IV Therapy" label (superseded by the real NAD/Immunity/Get Up and Go menu)
+
+**The site's Treatments/Services pages, Home featured sections, footer links, contact-form dropdown, gallery, team bios, and Before & After page were all updated accordingly** — this was a large structural change, not a copy edit, and is reflected across all 8 pages. Two before/after pairs (previously "Lip Enhancement" and part of "Cheek Filler") were kept and relabeled to explicitly cite the specific JUVÉDERM formulation (Volbella XC, Voluma XC) since lips and cheeks are genuinely FDA-approved use areas for those confirmed products — this is different from treating "Lip Injections" as its own undocumented service line.
+
+**What's left on the site now (all confirmed by a real document):** Botox, the 6-product JUVÉDERM filler collection, NAD/Immunity/Get Up and Go IV Therapy, Weight Loss Programs, Body Composition Analysis, and the Sexual Wellness pillar (placeholder copy, per item 1 below). If any of the removed items above are actually real services you offer, let us know and we'll add them back with real copy/pricing rather than the generic template descriptions that were there before.
 
 ## Open items — need your confirmation before we go further
 
@@ -32,10 +50,10 @@ Notes for Katherine (PM) after applying the official brand identity to the live 
 Nothing below has been confirmed as "in progress" or "coming" — these are open asks, not scheduled deliverables. Everything we've received so far (logo files, brand manual, marketing flyers, the Juvéderm/seca docs) has been graphic/document assets, never raw photography, a real staff roster, or booking-system credentials.
 
 1. **Real photography — clinic.** Every "clinic interior" spot on the site (About page hero, Home About section, Home hero lifestyle shot) is a gray placeholder box. Need actual interior/exterior shots of the Homestead location.
-2. **Real photography — treatments.** Every treatment card and detail row across Home, Treatments, Services, and Gallery (~35+ image slots: Botox, Fillers, Lip Injections, PRP, IV Therapy, Medical Skincare, Laser, etc.) is a placeholder. Need real procedure/product photography, or licensed stock as a stand-in if real photography isn't ready.
+2. **Real photography — treatments.** Every treatment card and detail row across Home, Treatments, Services, and Gallery (Botox, the 6 JUVÉDERM formulations, NAD/Immunity/Get Up and Go IV Therapy, Weight Loss, Body Composition Analysis) is a placeholder. Need real procedure/product photography, or licensed stock as a stand-in if real photography isn't ready.
 3. **Real team roster — names, roles, photos.** `team.html` and the Home "Meet the Team" section currently list **8 placeholder people** (Dr. Davina Rey, Marisol Vega RN, Camille Ortiz, Ana Delgado, Sofia Marin PA, Elena Cruz, Renata Lima, Bianca Reyes) carried over from the original design template — **these are not confirmed to be real staff.** We need the actual provider/staff list (names, credentials, roles) plus headshots before this goes live, or the site will be presenting fictional people as the clinic's team.
 4. **Before & After photography.** The dedicated Before & After page and the Home preview section have 6 before/after pairs, all placeholders. These need real (consented, HIPAA-compliant-release) patient photos or should be removed/replaced with stock until available.
-5. **Gallery images.** 12 placeholder tiles across categories (Botox, Clinic, Fillers, IV Therapy, Skincare, Lips, Laser, PRP, Team, Wellness) — same story, no real photos yet.
+5. **Gallery images.** 8 placeholder tiles across categories (Botox, Fillers, IV Therapy, Body Composition, Clinic, Team, Wellness) — same story, no real photos yet.
 6. **Instagram feed section.** Home page has a 6-post "@beautyatdavina" grid, currently all placeholders — either needs a live Instagram embed/API connection or real post images if the feed is static.
 7. **Booking platform** — see open item #5 above; this also blocks the "Book a Consultation" CTAs from doing anything beyond opening the contact form. No platform, account, or API credentials have been provided yet.
 
