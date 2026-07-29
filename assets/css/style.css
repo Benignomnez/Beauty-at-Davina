@@ -794,6 +794,9 @@ textarea.field__input { resize: vertical; }
 .treatment-row__meta-value { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink); margin-top: 3px; }
 .treatment-row__meta-value--accent { color: var(--green); }
 .treatment-row__meta .btn-pill { margin-left: auto; }
+.treatment-row__submeta { margin-top: clamp(32px, 4vw, 48px); padding-top: clamp(24px, 3vw, 32px); border-top: 1px solid var(--border-soft); }
+.treatment-row__submeta .eyebrow { margin-bottom: 8px; }
+.treatment-row__subcopy { font-size: 14.5px; color: var(--ink-mute); margin: 0 0 22px; max-width: 62ch; }
 
 /* ══════════════════════════════════════════════════════════════════════
    Services page
