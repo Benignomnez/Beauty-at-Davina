@@ -79,6 +79,25 @@ This is a substantial rebrand relative to what's currently live, not a drop-in a
 2. **Typography swap** — replace Cormorant Garamond + Manrope with DM Sans (Medium/Regular/Italic) sitewide; this changes the visual character of every heading on every page.
 3. **New content: sexual wellness** — needs copy, pricing, and placement in Treatments/Services (a real gap versus the brand's own stated service lineup).
 4. **"Glow In & Glow Out" positioning** — the current copy doesn't use this framing anywhere; adopting it would touch Home hero/about copy and possibly section groupings (grouping services into "glow in" vs "glow out" is a real option the guide implies).
-5. **Real NAP data** — separately discovered (not from this manual, but from other files in the same Drive folder): real address is `925 NE 30 Terr, Suite 316, Homestead, FL 33033`, real phone `(305) 245-8787`, parent entity "Davina Medical Care, P.A." — all different from the placeholder data currently on the site.
+5. **Real NAP data** — confirmed on multiple real marketing flyers in the same Drive folder: address `925 NE 30 Terrace, Suite 316, Homestead, FL 33033`, phone `(305) 245-8787`, parent entity "Davina Medical Care, P.A.", website `www.DavinaMedical.com`. All different from the placeholder data currently on the site.
+6. **Real IV Therapy menu** — the "IV Therapy Options Available" flyer names three specific offerings that should replace the generic IV Therapy copy currently on the site:
+   - **NAD IV Therapy** — mental clarity, energy, cellular repair, anti-aging
+   - **Immunity IV Therapy** — vitamin C, zinc, antioxidants; illness prevention/recovery ($150 per the Immunity flyer)
+   - **Get Up and Go IV Therapy** — B vitamins + amino acids; energy, metabolism, athletic performance
 
 Not starting any of this until scope/sequencing is confirmed.
+
+## Drive folder inventory — what was pulled vs. skipped
+
+The shared folder (`Beauty At Davina Web`) has 15 items. Accounted for:
+
+**Pulled into this repo:**
+- `Logo entregables beauty at davina (1).zip` → extracted into `assets/brand/logo/`
+- `Manual de Identidad - Beauty at Davina.pdf` (this was a Drive *shortcut* whose target file wasn't actually shared — the PM/user uploaded the real PDF directly in chat instead, which is what's saved here and what this notes file is based on)
+- 5 real marketing flyers, saved to `assets/brand/reference-flyers/`: `NAD .png`, `NAD FLYER updated.pdf`, `Immunity Flyer.pdf`, `Flyer - IV Therapy Options Available .png`, `Get up and go .png` — these are the source for the real NAP data and IV therapy menu above. Note: their visual design (red/teal, "Davina Medical Care" crest logo) is the **older** practice branding, not the new identity manual's palette — useful for real content/copy, not for visual style.
+
+**Seen but intentionally not pulled** (not Beauty at Davina brand assets):
+- `1.png`, `2.png`, `mBCA Patient Oriented 1 Pager - Print.pdf` — third-party marketing for a "seca mBCA" body-composition device, unrelated to the website
+- `BOTOX Cosmetic Primary Logo Drug-Name White.png`, `BOTOX Cosmetic-Primary Logo Drug Name Black.png`, `JUVE_LOGO_PRIMARY_HORIZONTAL_K.png` — Allergan's own product trademarks (Botox/Juvéderm), not this clinic's brand identity; using them would fall under Allergan's own brand-usage rules, a separate question from this identity manual
+- `Flyer - IMMUNITY IV INFUSION (1).png` — a near-duplicate of `Immunity Flyer.pdf`, same offer/content
+- `Juvederm Collection Info Sheet.docx` — an internal staff reference on specific Juvéderm filler formulations (Ultra XC, Volbella, Voluma, etc.); useful clinical detail but the site currently describes fillers generically rather than by product line, so nothing was pulled from it yet
