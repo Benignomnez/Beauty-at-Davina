@@ -705,7 +705,8 @@ textarea.field__input { resize: vertical; }
   background: var(--sig-line); border: 1px solid var(--sig-line); border-radius: 22px; overflow: hidden;
 }
 @media (max-width: 980px) { .home-signature__grid { grid-template-columns: repeat(2, 1fr); } }
-.sig-card { background: var(--input-bg); padding: 34px 26px 30px; transition: background .3s; }
+.sig-card { display: block; background: var(--input-bg); padding: 34px 26px 30px; transition: background .3s, transform .3s; color: inherit; }
+.sig-card:hover { transform: translateY(-4px); color: inherit; }
 .sig-card:hover { background: #fff; }
 .sig-card__num { font-family: var(--font-serif); font-size: 20px; color: var(--gold); font-weight: 600; margin-bottom: 22px; }
 .sig-card h3 { font-family: var(--font-serif); font-weight: 600; font-size: 27px; margin: 0 0 12px; letter-spacing: -.005em; }
@@ -774,7 +775,7 @@ textarea.field__input { resize: vertical; }
    Treatments page
    ══════════════════════════════════════════════════════════════════════ */
 
-.treatment-row { max-width: 1320px; margin: 0 auto; padding: clamp(28px, 4vw, 56px) clamp(20px, 5vw, 64px); }
+.treatment-row { max-width: 1320px; margin: 0 auto; padding: clamp(28px, 4vw, 56px) clamp(20px, 5vw, 64px); scroll-margin-top: 90px; }
 .treatment-row__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
 @media (max-width: 860px) { .treatment-row__grid { grid-template-columns: 1fr; } .treatment-row__media { order: -1; } }
 .treatment-row__media img { width: 100%; height: 100%; object-fit: cover; }
@@ -810,8 +811,9 @@ textarea.field__input { resize: vertical; }
   background: var(--card); border: 1px solid var(--border); border-radius: 20px;
   padding: 28px 26px; display: flex; flex-direction: column;
   transition: transform .35s, box-shadow .35s, border-color .35s;
+  color: inherit;
 }
-.service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 56px -34px rgba(35, 32, 28, .4); border-color: var(--divider); }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 56px -34px rgba(35, 32, 28, .4); border-color: var(--divider); color: inherit; }
 .service-card__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 10px; }
 .service-card h3 { font-family: var(--font-serif); font-weight: 600; font-size: 24px; margin: 0; }
 .service-card__flag { background: var(--icon-tile-bg); color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
