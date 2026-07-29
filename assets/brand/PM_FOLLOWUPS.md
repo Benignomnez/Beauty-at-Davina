@@ -33,6 +33,24 @@ At the client's request, we audited every service/treatment mentioned anywhere o
 
 **What's left on the site now (all confirmed by a real document):** Botox, the 6-product JUVÉDERM filler collection, NAD/Immunity/Get Up and Go IV Therapy, Weight Loss Programs, Body Composition Analysis, and the Sexual Wellness pillar (placeholder copy, per item 1 below). If any of the removed items above are actually real services you offer, let us know and we'll add them back with real copy/pricing rather than the generic template descriptions that were there before.
 
+## Update (2026-07-29): Lip Injections, PRP, Medical Skincare, Laser & Hair Loss restored
+
+After the removal above, we got access to the **Tareas** board on your Monday.com project ("Mi equipo" workspace). Two task titles on that board explicitly scope work we'd just removed:
+
+- "Subpágina: Inyectables (Botox, Rellenos, Labios, PRP)" — names Labios (Lip Injections) and PRP as in-scope subpages, alongside Botox and Fillers.
+- "Subpágina: Cuidado Especializado (Láser, Piel Médico, Caída del Cabello)" — names Láser (Laser), Piel Médico (Medical Skincare) and Caída del Cabello (Hair Loss) as an in-scope category.
+
+That's a real project-scope source we hadn't checked when we did the document audit — it just isn't a *brand* document, it's your own task breakdown. Since it directly contradicts "not part of the original scope," we restored these five items rather than leave the site inconsistent with the board:
+
+- **Lip Injections** — back as its own row/card (Treatments, Services, Home featured + signature grids), $550 / 30 min.
+- **PRP Treatments** — back as its own row/card, $700 / 45–60 min.
+- **Medical Skincare** — back, copy trimmed to drop "peels" (Chemical Peels itself is still excluded, see below), from $180.
+- **Laser Treatments** (hair removal + skin treatments) — back, from $120.
+- **Hair Loss Treatments** — new section added (didn't exist before), since the board names "Caída del Cabello" as its own subpage; placeholder copy/pricing (from $400) since we have zero source material for this one — **needs real copy and pricing from you.**
+- Team bios (Marisol Vega, Camille Ortiz), the Before & After page (3 pairs restored: Medical Skincare, Laser Resurfacing, PRP Hair Restoration), the contact-form dropdown, and footer links were all updated to match.
+
+**Still true and unchanged:** Chemical Peels, Microneedling, and Vitamin Injections remain removed — nothing (not even the board) names these as their own line items, so they're staying out until you confirm otherwise. And **none of the five restored items above have real copy, photography, or confirmed pricing from any document** — the pricing/duration shown is carried over from the original design template, not verified. Please treat this as an open ask, same as Sexual Wellness in item 1 below.
+
 ## Open items — need your confirmation before we go further
 
 1. **Sexual wellness — real services & pricing.** The brand guide names this as an official service pillar, but no menu, descriptions, or pricing exist in any asset we've received. We've added a generic, non-explicit placeholder card/row ("Confidential, physician-led care for intimacy and vitality — discussed one-on-one during a private consultation") on both the Services and Treatments pages so the pillar isn't visibly missing, but this needs real copy and pricing from you/the clinical team before launch.
