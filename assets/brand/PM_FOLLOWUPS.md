@@ -51,28 +51,47 @@ That's a real project-scope source we hadn't checked when we did the document au
 
 **Still true and unchanged:** Chemical Peels, Microneedling, and Vitamin Injections remain removed — nothing (not even the board) names these as their own line items, so they're staying out until you confirm otherwise. And **none of the five restored items above have real copy, photography, or confirmed pricing from any document** — the pricing/duration shown is carried over from the original design template, not verified. Please treat this as an open ask, same as Sexual Wellness in item 1 below.
 
-## Open items — need your confirmation before we go further
+## PM response (2026-07-31): Kat's confirmations on the follow-up doc
 
-1. **Sexual wellness — real services & pricing.** The brand guide names this as an official service pillar, but no menu, descriptions, or pricing exist in any asset we've received. We've added a generic, non-explicit placeholder card/row ("Confidential, physician-led care for intimacy and vitality — discussed one-on-one during a private consultation") on both the Services and Treatments pages so the pillar isn't visibly missing, but this needs real copy and pricing from you/the clinical team before launch.
-2. **Juvéderm per-product pricing** — the info sheet gives no prices per formulation. We kept the existing single "from $650" figure at the top of the Dermal Fillers section and added a note that "pricing varies by product and treatment area, confirmed during your consultation." Let us know if you'd rather list per-product starting prices.
-3. **Body Composition Analysis pricing** — neither seca flyer includes a price; currently shown as "Consult." Let us know if there's a set price (e.g., a standalone fee or bundled with weight-loss programs).
-4. **Trademark logo usage sign-off** — we went ahead and added the Botox Cosmetic and Juvéderm logos as trust badges per your direction. Please have your legal/marketing contact double-check this against Allergan's official brand-usage guidelines (sizing, clear-space, required registration marks) before launch, since we're applying our own best judgment on placement rather than a documented usage guide.
-5. **Booking platform integration** (e.g., Square Appointments) — contract references this; not started pending confirmation of which system the clinic actually uses.
-6. **Bilingual (Spanish) site support** — contract references this; explicitly deferred, not started.
-7. **Domain** — site currently references the placeholder `www.beautyatdavina.com` in canonical tags, OG tags, and JSON-LD. The brand manual and marketing flyers reference `www.DavinaMedical.com`. Please confirm which domain is correct/final so we don't launch with the wrong one baked into SEO metadata.
-8. **"Glow In & Glow Out" copy review** — this is new customer-facing language we introduced by extrapolating from the brand manual's internal creative platform. Please review the actual wording on Home, Services and Treatments before this goes live, in case the client has specific phrasing they want to keep consistent with their own marketing.
-9. **Immunity IV Therapy price discrepancy** — a separate "Immunity IV Infusion" social/promo flyer shows a **"New Year Sale" price of $95** ("while supplies last, subject to availability"), versus the **$150** standing price shown on the site (from the earlier Immunity flyer PDF). We've deliberately left the site at $150 since the $95 reads as a limited-time promotional price, not a permanent one — flagging in case you want to run that $95 offer as a time-boxed banner/promo on the site rather than changing the base price.
+Kat reviewed this document and replied by email with decisions on Parte 1 (Confirmaciones) and an update on Parte 2 (Gestión de recursos pendientes). Captured here so the resolution lives next to the original ask.
 
-## Missing assets — not yet provided, needed before launch
+**Confirmations:**
+- **Domain — confirmed final: `www.beautyatdavina.com`.** This already matches every canonical tag, OG tag, JSON-LD block, `sitemap.xml`, and `robots.txt` on the site — no changes needed. Open item #7 below is now **resolved**.
+- **Booking platform — confirmed: none.** The site will not integrate a booking system; the "Book a Consultation" flow stays exactly as built, redirecting to the contact form. No further work needed. Open item #5 below is now **resolved**.
+- **Sexual Wellness pricing, Juvéderm per-product pricing, seca mBCA/Body Composition pricing, and Immunity IV pricing** — Kat has sent a formal request to the clinic administrator (Cynthia) for the real service menu and price clarification. Until that response comes back, she asked us to **keep the current structure and placeholders as-is**. Open items #1, #2, #3, and #9 below are now waiting on the clinic, not on us.
+- **Trademark logo usage (Botox/Juvéderm)** — Kat escalated this to the clinic's administrative/legal contact for sign-off against Allergan's brand-usage guidelines. Open item #4 below is now escalated, awaiting their review.
+- **"Glow In & Glow Out" copywriting** — Kat asked us to **keep the current wording as-is** while the client team does its own text review. Open item #8 below stays open but isn't ours to act on until they respond.
 
-Nothing below has been confirmed as "in progress" or "coming" — these are open asks, not scheduled deliverables. Everything we've received so far (logo files, brand manual, marketing flyers, the Juvéderm/seca docs) has been graphic/document assets, never raw photography, a real staff roster, or booking-system credentials.
+**Resource requests (Parte 2) — officially requested by Kat from clinic administration, 2026-07-31:**
+- Official staff list (names, roles/credentials) + profile photos
+- Real photography of the Homestead facility
+- Real/authorized photography of procedures, products, and Before & After results (HIPAA-compliant consent)
+- The clinic's official Instagram account, to wire up the feed
 
-1. **Real photography — clinic.** Every "clinic interior" spot on the site (About page hero, Home About section, Home hero lifestyle shot) is a gray placeholder box. Need actual interior/exterior shots of the Homestead location.
-2. **Real photography — treatments.** Every treatment card and detail row across Home, Treatments, Services, and Gallery (Botox, the 6 JUVÉDERM formulations, NAD/Immunity/Get Up and Go IV Therapy, Weight Loss, Body Composition Analysis) is a placeholder. Need real procedure/product photography, or licensed stock as a stand-in if real photography isn't ready.
-3. **Real team roster — names, roles, photos.** `team.html` and the Home "Meet the Team" section currently list **8 placeholder people** (Dr. Davina Rey, Marisol Vega RN, Camille Ortiz, Ana Delgado, Sofia Marin PA, Elena Cruz, Renata Lima, Bianca Reyes) carried over from the original design template — **these are not confirmed to be real staff.** We need the actual provider/staff list (names, credentials, roles) plus headshots before this goes live, or the site will be presenting fictional people as the clinic's team.
-4. **Before & After photography.** The dedicated Before & After page and the Home preview section have 6 before/after pairs, all placeholders. These need real (consented, HIPAA-compliant-release) patient photos or should be removed/replaced with stock until available.
-5. **Gallery images.** 8 placeholder tiles across categories (Botox, Fillers, IV Therapy, Body Composition, Clinic, Team, Wellness) — same story, no real photos yet.
-6. **Instagram feed section.** Home page has a 6-post "@beautyatdavina" grid, currently all placeholders — either needs a live Instagram embed/API connection or real post images if the feed is static.
-7. **Booking platform** — see open item #5 above; this also blocks the "Book a Consultation" CTAs from doing anything beyond opening the contact form. No platform, account, or API credentials have been provided yet.
+Kat will forward these as she receives them. Nothing to do on our side yet, but the "Missing assets" list below now has an active owner chasing it rather than sitting with no one responsible.
 
-**Bottom line for Katherine:** the site is structurally and content-wise ready (real services, real NAP, real pricing where available, real brand system) — what's blocking a true launch is photography, a confirmed real staff list, and the booking integration. Worth raising as a single, explicit ask rather than letting it surface page-by-page during review.
+## Open items — status as of 2026-07-31
+
+1. **Sexual wellness — real services & pricing.** *Waiting on clinic admin (Cynthia), via Kat.* Placeholder copy stays live until she responds.
+2. **Juvéderm per-product pricing.** *Waiting on clinic admin (Cynthia), via Kat.* Single "from $650" figure stays as the placeholder.
+3. **Body Composition Analysis pricing.** *Waiting on clinic admin (Cynthia), via Kat.* Still shown as "Consult."
+4. **Trademark logo usage sign-off.** *Escalated by Kat to the admin/legal contact*, awaiting their review against Allergan's guidelines.
+5. ~~**Booking platform integration**~~ — **Resolved 2026-07-31.** Confirmed: no booking system. CTAs stay pointed at the contact form.
+6. **Bilingual (Spanish) site support** — contract references this; explicitly deferred, not started. No update from Kat yet.
+7. ~~**Domain**~~ — **Resolved 2026-07-31.** Confirmed final: `www.beautyatdavina.com`, matching what's already live.
+8. **"Glow In & Glow Out" copy review** — *Kat asked us to keep current wording* while the client team reviews it themselves. No action needed from us until they respond.
+9. **Immunity IV Therapy price discrepancy** ($95 promo vs. $150 standing price) — folded into the pricing clarification Kat requested from Cynthia (see confirmations above). Site stays at $150 until that response.
+
+## Missing assets — officially requested from clinic admin, awaiting delivery
+
+As of 2026-07-31 these are no longer open asks with no owner — Kat has formally requested them from clinic administration and will forward them as received.
+
+1. **Real photography — clinic.** Every "clinic interior" spot on the site (About page hero, Home About section, Home hero lifestyle shot) is a gray placeholder box. *Requested by Kat.*
+2. **Real photography — treatments & procedures.** Every treatment card and detail row across Home, Treatments, Services, and Gallery is a placeholder. *Requested by Kat.*
+3. **Real team roster — names, roles, photos.** `team.html` and the Home "Meet the Team" section currently list **4 placeholder people** (Dr. Davina Rey, Marisol Vega RN, Camille Ortiz, Ana Delgado) carried over from the original design template — **not confirmed to be real staff.** *Requested by Kat (names, cargos, credenciales, profile photos).*
+4. **Before & After photography.** The dedicated Before & After page and the Home preview section have 6 before/after pairs, all placeholders. *Requested by Kat — HIPAA-compliant patient consent required.*
+5. **Gallery images.** Placeholder tiles across all categories — same story, no real photos yet. Covered by the same clinic-photography request.
+6. **Instagram feed section.** Home page has a 6-post "@beautyatdavina" grid, currently all placeholders. *Kat has requested the clinic's official Instagram account* so we can wire up the feed.
+7. ~~**Booking platform**~~ — **Resolved 2026-07-31**, see open item #5 above. Not needed; CTAs stay pointed at the contact form.
+
+**Bottom line for Katherine:** domain and booking-platform questions are closed. Pricing/menu clarifications and trademark sign-off are in your hands (Cynthia / legal). The remaining blocker for launch is the asset delivery you've now requested — photography, the real staff roster, and the Instagram handle. We'll integrate each as it comes in rather than waiting for all of it at once.
