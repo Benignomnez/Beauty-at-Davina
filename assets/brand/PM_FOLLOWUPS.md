@@ -15,6 +15,27 @@ Notes for Katherine (PM) after applying the official brand identity to the live 
 - **Body Composition Analysis added as a new Glow In service** (from the seca mBCA flyers added to the Drive folder the same day), positioned alongside Weight Loss Programs on Treatments and Services. Source notes saved to `assets/brand/reference-docs/seca-mbca-body-composition.md`.
 - **Official BOTOX® Cosmetic and JUVÉDERM® trademark logos added as trust badges**: the real manufacturer logos (pulled from the Drive folder) now appear next to the Botox and Dermal Fillers sections on Treatments, and as small icons on the matching Services cards, to reassure customers these are genuine FDA-approved products rather than substitutes. Logos are used unmodified/unscaled-in-aspect (full lockup, not cropped) per standard trademark-usage practice. Full-size source files kept in `assets/brand/logo/product-logos/`.
 
+## Brand guide compliance verification (2026-08-08)
+
+Audited every color and font rule in `assets/css/style.css` against the official brand manual (`BRAND_GUIDELINES.md`) to confirm the rebrand actually matches, not just "looks close."
+
+**Colors — exact hex match on all 6 official brand colors, correct proportions/roles:**
+
+| Brand color | Hex | Role | Site variable |
+|---|---|---|---|
+| Verde Bosque | `#0B2D26` | 60% dominant | `--green` |
+| Blanco Almendra | `#F9F7F2` | 20% contrast | `--bg` |
+| Beige Arena | `#CFAB8F` | 10% equilibrio | `--beige` |
+| Durazno Claro | `#F8C09D` | 5% impulso/highlights | `--gold` |
+| Terracota | `#B66640` | 3% CTA/promos | `--terracota` |
+| Rosa Malva | `#BC8A81` | 2% elegancia | `--malva` |
+
+Usage matches the stated proportions too: green dominates (34 references, mostly backgrounds/headings), terracota is reserved for CTA buttons only (4 uses), malva only appears on Before & After "After" tags (2 uses), beige is applied as a soft-tint background rather than at full saturation. No trace of the pre-rebrand mockup palette (`#33473B` / `#A6864E` / `#F8F4EE`) remains anywhere.
+
+**Typography — matches after a fix applied today:** DM Sans is used for every font sitewide, zero serif anywhere (no `Cormorant Garamond`/`Manrope` remnants). Found and fixed a real mismatch: 24 heading/title rules across the CSS were set to `font-weight: 600`, which the manual doesn't call for (it specifies exactly three styles — DM Sans Medium/500 for titles, Regular/400 for body, Italic for emphasis) and which wasn't even loaded by the site's Google Fonts request — browsers were faking/substituting that weight instead of rendering true DM Sans Medium. All 24 are now corrected to `500`, matching the manual exactly. Non-heading UI chrome (nav CTA button, small badges/tags, form labels) was left on its existing weight since it isn't part of the manual's title/headline hierarchy.
+
+**Bottom line:** the live site's colors and typography now match the brand manual exactly, in both the values used and how they're applied.
+
 ## Unverified services removed from the site (2026-07-29)
 
 At the client's request, we audited every service/treatment mentioned anywhere on the site against the actual source documents provided (brand manual, IV therapy flyers, Juvéderm sheet, seca sheet) and **removed everything that had no backing in a real document** — these had been carried over from the original generic design template at project start and were never verified against Beauty at Davina's actual offerings:
