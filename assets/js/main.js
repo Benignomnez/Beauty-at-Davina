@@ -30,25 +30,41 @@
       onScroll();
     }
 
-    // Hero parallax: the media column drifts slower than the page scroll,
-    // capped so it stays subtle and never drifts far once you're past the hero.
-    // Lives on its own inner wrapper so it doesn't fight the [data-reveal]
-    // entrance transform on the outer .home-hero__media.
-    var heroMedia = document.querySelector('[data-hero-parallax]');
-    if (heroMedia && !reduceMotion) {
-      var parallaxTicking = false;
-      var applyParallax = function () {
-        var offset = Math.min(window.scrollY * 0.15, 70);
-        heroMedia.style.transform = 'translateY(' + offset + 'px)';
-        parallaxTicking = false;
+    // Hero parallax (Wagerfield-style): layers tagged with data-depth shift
+    // at different rates as the cursor moves, like http://matthew.wagerfield.com/parallax/
+    // — a mouse-driven layered-depth effect, not a scroll effect. Desktop/mouse
+    // only (pointer: fine) since it has no meaning on touch, and skipped under
+    // prefers-reduced-motion.
+    var parallaxScene = document.querySelector('[data-parallax-scene]');
+    var parallaxLayers = parallaxScene ? qa('[data-depth]') : [];
+    if (parallaxScene && parallaxLayers.length && !reduceMotion &&
+        window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+      var maxShift = 80;
+      var sceneRect = null;
+      var ticking = false;
+      var updateSceneRect = function () { sceneRect = parallaxScene.getBoundingClientRect(); };
+      updateSceneRect();
+      window.addEventListener('resize', updateSceneRect);
+
+      var applyDepth = function (relX, relY) {
+        parallaxLayers.forEach(function (layer) {
+          var depth = parseFloat(layer.getAttribute('data-depth')) || 0;
+          var x = (relX * depth * maxShift).toFixed(2);
+          var y = (relY * depth * maxShift).toFixed(2);
+          layer.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+        });
+        ticking = false;
       };
-      window.addEventListener('scroll', function () {
-        if (!parallaxTicking) {
-          window.requestAnimationFrame(applyParallax);
-          parallaxTicking = true;
-        }
+      window.addEventListener('mousemove', function (e) {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function () {
+          var relX = (e.clientX - sceneRect.left) / sceneRect.width - 0.5;
+          var relY = (e.clientY - sceneRect.top) / sceneRect.height - 0.5;
+          applyDepth(relX, relY);
+        });
       }, { passive: true });
-      applyParallax();
+      parallaxScene.addEventListener('mouseleave', function () { applyDepth(0, 0); });
     }
     var burger = document.querySelector('[data-burger]');
     var mobileMenu = document.querySelector('[data-mobile-menu]');
