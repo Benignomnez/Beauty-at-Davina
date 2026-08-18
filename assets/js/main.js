@@ -6,6 +6,7 @@
 
   onReady(function () {
     var qa = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Lucide icons
     var runIcons = function () { try { window.lucide && window.lucide.createIcons(); } catch (e) {} };
@@ -28,6 +29,27 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     }
+
+    // Hero parallax: the media column drifts slower than the page scroll,
+    // capped so it stays subtle and never drifts far once you're past the hero.
+    // Lives on its own inner wrapper so it doesn't fight the [data-reveal]
+    // entrance transform on the outer .home-hero__media.
+    var heroMedia = document.querySelector('[data-hero-parallax]');
+    if (heroMedia && !reduceMotion) {
+      var parallaxTicking = false;
+      var applyParallax = function () {
+        var offset = Math.min(window.scrollY * 0.15, 70);
+        heroMedia.style.transform = 'translateY(' + offset + 'px)';
+        parallaxTicking = false;
+      };
+      window.addEventListener('scroll', function () {
+        if (!parallaxTicking) {
+          window.requestAnimationFrame(applyParallax);
+          parallaxTicking = true;
+        }
+      }, { passive: true });
+      applyParallax();
+    }
     var burger = document.querySelector('[data-burger]');
     var mobileMenu = document.querySelector('[data-mobile-menu]');
     if (burger && mobileMenu) {
@@ -41,7 +63,6 @@
     }
 
     // Reveal-on-scroll
-    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var revealEls = qa('[data-reveal]');
     if (!reduceMotion && 'IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
