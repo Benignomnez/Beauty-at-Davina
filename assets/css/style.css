@@ -471,28 +471,18 @@ textarea.field__input { resize: vertical; }
 .mobile-fab--call { width: 44px; height: 44px; background: var(--card); border: 1px solid var(--border); color: var(--ink); }
 .mobile-fab--book { width: 54px; height: 54px; background: var(--terracota); color: var(--bg); }
 
-/* ── Reveal-on-scroll: bolder section-to-section transitions ─────────── */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(64px) scale(.94);
-  transition: opacity .8s cubic-bezier(.16,.8,.24,1), transform .8s cubic-bezier(.16,.8,.24,1);
-}
-[data-reveal].is-visible { opacity: 1; transform: none; }
-
-[data-reveal-stagger] > * {
-  opacity: 0;
-  transform: translateY(52px) scale(.95);
-  transition: opacity .7s cubic-bezier(.16,.8,.24,1), transform .7s cubic-bezier(.16,.8,.24,1);
-}
-[data-reveal-stagger] > *.is-visible { opacity: 1; transform: none; }
-
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal], [data-reveal-stagger] > * {
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
+/* ── Reveal-on-scroll ──────────────────────────────────────────────────
+   Animated entirely by GSAP/ScrollTrigger (assets/js/scroll-animations.js)
+   for one consistent engine/easing across the whole site. These rules only
+   set the pre-animation hidden state — no CSS transition here, since GSAP
+   tweens these same properties via inline styles and a CSS transition
+   watching the same properties would fight it frame by frame. If GSAP
+   fails to load, or JS is unavailable, or the visitor prefers reduced
+   motion, the script (or the no-JS fallback below) sets these back to
+   their natural visible state immediately. ─────────────────────────── */
+[data-reveal] { opacity: 0; }
+[data-reveal-stagger] > * { opacity: 0; }
+[data-hero-scroll-image] { opacity: 0; }
 
 /* ── Simple stub pages ────────────────────────────────────────────────── */
 .stub-section {

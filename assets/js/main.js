@@ -42,44 +42,10 @@
       });
     }
 
-    // Reveal-on-scroll
-    var revealEls = qa('[data-reveal]');
-    if (!reduceMotion && 'IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
-      revealEls.forEach(function (el) { io.observe(el); });
-    } else {
-      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
-    }
-
-    // Staggered grid reveal — same fade-up, but each child of a
-    // [data-reveal-stagger] container gets an incremental delay so grids
-    // cascade in rather than popping in as one block.
-    var staggerGroups = qa('[data-reveal-stagger]');
-    if (!reduceMotion && 'IntersectionObserver' in window) {
-      var stagIo = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            Array.prototype.slice.call(entry.target.children).forEach(function (child, i) {
-              child.style.transitionDelay = Math.min(i * 90, 540) + 'ms';
-              child.classList.add('is-visible');
-            });
-            stagIo.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
-      staggerGroups.forEach(function (el) { stagIo.observe(el); });
-    } else {
-      staggerGroups.forEach(function (el) {
-        Array.prototype.slice.call(el.children).forEach(function (child) { child.classList.add('is-visible'); });
-      });
-    }
+    // Reveal-on-scroll (single [data-reveal] elements and staggered
+    // [data-reveal-stagger] grids) is handled entirely by GSAP/ScrollTrigger
+    // in assets/js/scroll-animations.js, for one consistent animation engine
+    // across the whole site instead of splitting it between two systems.
 
     // Testimonial carousel: auto-advancing crossfade, pauses on hover/focus,
     // and stays on a single slide (no rotation) if the visitor prefers reduced motion.
