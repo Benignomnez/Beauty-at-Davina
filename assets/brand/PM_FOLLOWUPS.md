@@ -2,6 +2,21 @@
 
 Notes for Katherine (PM) after applying the official brand identity to the live site. Full source analysis is in `BRAND_GUIDELINES.md`.
 
+## Update (2026-08-18): Client/PM animation & motion spec implemented
+
+Implemented the full restrained-motion spec relayed from the client/PM analysis, sitewide:
+
+- Fade-up scroll reveals, now staggered on every repeated-card grid (treatments, services, home featured/signature/team/journey/instagram grids, gallery, before/after) instead of popping in as one block.
+- Slow Ken Burns zoom on the Home hero image area.
+- Header now visibly shrinks and increases its blur/opacity on scroll (previously the blur was static).
+- Treatment/service tiles with photography (Home Featured Treatments, Gallery) now scale ~1.04 on hover with a dark overlay and a "See details" label sliding up.
+- Added an auto-advancing, crossfade testimonial carousel to Home (pauses on hover/focus, dot navigation). **Placeholder quotes only** — no real, consented patient testimonials have been provided, so all four are generically attributed to "Verified Patient" rather than named individuals. Needs real reviews before launch, same as the other placeholder content below.
+- Smooth in-page anchor scrolling site-wide.
+- Added a mobile sticky Call / Book Now bar (visible under ~720px) on all 8 pages.
+- Every animation above (and the pre-existing ones) now honors `prefers-reduced-motion` — confirmed no motion plays for visitors with that OS setting.
+- Audited and confirmed (no changes needed): single `<h1>` per page with correct heading order on every page; no auto-rotating hero slider; no service grid larger than 6 items.
+- Real photography is still outstanding — see "Missing assets" below; this round only builds the interaction/motion layer, it doesn't add new images.
+
 ## Applied to the site (no action needed)
 
 - Official color palette (Verde Bosque, Blanco Almendra, Beige Arena, Durazno Claro, Terracota, Rosa Malva) wired into `assets/css/style.css`, with Terracota used for CTA buttons per the brand guide's role assignment.
@@ -114,5 +129,6 @@ As of 2026-07-31 these are no longer open asks with no owner — Kat has formall
 5. **Gallery images.** Placeholder tiles across all categories — same story, no real photos yet. Covered by the same clinic-photography request.
 6. **Instagram feed section.** Home page has a 6-post "@beautyatdavina" grid, currently all placeholders. *Kat has requested the clinic's official Instagram account* so we can wire up the feed.
 7. ~~**Booking platform**~~ — **Resolved 2026-07-31**, see open item #5 above. Not needed; CTAs stay pointed at the contact form.
+8. **Real patient testimonials.** New as of 2026-08-18: added a testimonial carousel to Home per the client's animation/motion spec, but we have no real, consented patient reviews to put in it. The 4 slides currently live are generic placeholder copy attributed to "Verified Patient" (not a named individual) rather than anything resembling a genuine review — needs replacing with real testimonials (and consent) before launch.
 
-**Bottom line for Katherine:** domain and booking-platform questions are closed. Pricing/menu clarifications and trademark sign-off are in your hands (Cynthia / legal). The remaining blocker for launch is the asset delivery you've now requested — photography, the real staff roster, and the Instagram handle. We'll integrate each as it comes in rather than waiting for all of it at once.
+**Bottom line for Katherine:** domain and booking-platform questions are closed. Pricing/menu clarifications and trademark sign-off are in your hands (Cynthia / legal). The remaining blocker for launch is the asset delivery you've now requested — photography, the real staff roster, the Instagram handle, and now real patient testimonials. We'll integrate each as it comes in rather than waiting for all of it at once.

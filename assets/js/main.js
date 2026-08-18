@@ -41,8 +41,9 @@
     }
 
     // Reveal-on-scroll
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var revealEls = qa('[data-reveal]');
-    if ('IntersectionObserver' in window) {
+    if (!reduceMotion && 'IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -54,6 +55,64 @@
       revealEls.forEach(function (el) { io.observe(el); });
     } else {
       revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+
+    // Staggered grid reveal — same fade-up, but each child of a
+    // [data-reveal-stagger] container gets an incremental delay so grids
+    // cascade in rather than popping in as one block.
+    var staggerGroups = qa('[data-reveal-stagger]');
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      var stagIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            Array.prototype.slice.call(entry.target.children).forEach(function (child, i) {
+              child.style.transitionDelay = Math.min(i * 90, 540) + 'ms';
+              child.classList.add('is-visible');
+            });
+            stagIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+      staggerGroups.forEach(function (el) { stagIo.observe(el); });
+    } else {
+      staggerGroups.forEach(function (el) {
+        Array.prototype.slice.call(el.children).forEach(function (child) { child.classList.add('is-visible'); });
+      });
+    }
+
+    // Testimonial carousel: auto-advancing crossfade, pauses on hover/focus,
+    // and stays on a single slide (no rotation) if the visitor prefers reduced motion.
+    var carousel = document.querySelector('[data-testimonial-carousel]');
+    if (carousel) {
+      var slides = qa('[data-testimonial-slide]');
+      var dots = qa('[data-testimonial-dot]');
+      var current = 0;
+      var timer = null;
+
+      var goTo = function (index) {
+        slides[current].classList.remove('is-active');
+        dots[current].classList.remove('is-active');
+        dots[current].setAttribute('aria-selected', 'false');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+        dots[current].setAttribute('aria-selected', 'true');
+      };
+      var start = function () {
+        if (reduceMotion || slides.length < 2) return;
+        stop();
+        timer = setInterval(function () { goTo(current + 1); }, 6500);
+      };
+      var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i); start(); });
+      });
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      carousel.addEventListener('focusin', stop);
+      carousel.addEventListener('focusout', start);
+      start();
     }
 
     // Gallery filter chips: visual active state only (no data-side category filter)
