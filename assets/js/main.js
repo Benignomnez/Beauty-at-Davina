@@ -69,13 +69,13 @@
         }, { passive: true });
         parallaxScene.addEventListener('mouseleave', function () { applyDepth(0, 0); });
       } else {
-        var scrollCap = 90;
+        var scrollCap = 220;
         var scrollTicking = false;
         var applyScrollDepth = function () {
           var y = window.scrollY;
           parallaxLayers.forEach(function (layer) {
             var depth = parseFloat(layer.getAttribute('data-depth')) || 0;
-            var shift = Math.min(y * depth * 0.5, scrollCap).toFixed(2);
+            var shift = Math.min(y * depth * 0.9, scrollCap).toFixed(2);
             layer.style.transform = 'translate3d(0, ' + shift + 'px, 0)';
           });
           scrollTicking = false;
