@@ -47,9 +47,13 @@
     // in assets/js/scroll-animations.js, for one consistent animation engine
     // across the whole site instead of splitting it between two systems.
 
-    // Home hero carousel: auto-advancing image crossfade every 3s, with
-    // prev/next arrows and dot navigation. Pauses on hover/focus, and stays
-    // on the first slide (no rotation) if the visitor prefers reduced motion.
+    // Home hero carousel: auto-advancing full-bleed image rotation every 3s,
+    // with prev/next arrows and dot navigation. Each change drops the
+    // incoming image in from above while dissolving the outgoing one —
+    // done with GSAP (already loaded sitewide) when available, falling
+    // back to a plain CSS dissolve otherwise. Pauses on hover/focus, and
+    // stays on the first slide (no rotation) if the visitor prefers
+    // reduced motion.
     var heroCarousel = document.querySelector('[data-hero-carousel]');
     if (heroCarousel) {
       var heroSlides = qa('[data-hero-slide]');
@@ -58,11 +62,33 @@
       var heroTimer = null;
 
       var heroGoTo = function (index) {
-        heroSlides[heroCurrent].classList.remove('is-active');
+        var outgoing = heroSlides[heroCurrent];
         heroDots[heroCurrent].classList.remove('is-active');
         heroCurrent = (index + heroSlides.length) % heroSlides.length;
-        heroSlides[heroCurrent].classList.add('is-active');
+        var incoming = heroSlides[heroCurrent];
         heroDots[heroCurrent].classList.add('is-active');
+
+        if (window.gsap && !reduceMotion) {
+          // GSAP drives opacity/position directly via inline styles here,
+          // so the CSS dissolve transition (the no-GSAP fallback) needs to
+          // step aside rather than also reacting to every value GSAP sets.
+          outgoing.style.transition = 'none';
+          incoming.style.transition = 'none';
+          window.gsap.to(outgoing, {
+            opacity: 0,
+            duration: 0.6,
+            ease: 'power1.out',
+            onComplete: function () { outgoing.classList.remove('is-active'); }
+          });
+          incoming.classList.add('is-active');
+          window.gsap.fromTo(incoming,
+            { opacity: 0, y: -36 },
+            { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out' }
+          );
+        } else {
+          outgoing.classList.remove('is-active');
+          incoming.classList.add('is-active');
+        }
       };
       var heroStart = function () {
         if (reduceMotion || heroSlides.length < 2) return;
