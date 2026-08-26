@@ -651,7 +651,14 @@ textarea.field__input { resize: vertical; }
   transition: opacity 1s ease;
 }
 .home-hero__slide.is-active { opacity: 1; z-index: 1; }
-.home-hero__slide img { width: 100%; height: 100%; object-fit: cover; display: block; animation: hero-kenburns 24s ease-in-out infinite alternate; }
+/* object-fit: contain (not cover) on purpose — these source photos are
+   portrait (~4:5) while the hero band is landscape, so a cover crop was
+   slicing straight through subjects' heads no matter how the crop was
+   aimed. Contain always shows the whole photo, letterboxed into the
+   hero's own green background, and the Ken Burns zoom below now
+   animates from that full view toward a closer one instead of just
+   nudging an already-cropped frame. */
+.home-hero__slide img { width: 100%; height: 100%; object-fit: contain; display: block; animation: hero-kenburns 24s ease-in-out infinite alternate; }
 @keyframes hero-kenburns { from { transform: scale(1); } to { transform: scale(1.09); } }
 @media (prefers-reduced-motion: reduce) { .home-hero__slide img { animation: none; } .home-hero__slide { transition: none; } }
 
