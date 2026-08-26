@@ -670,10 +670,43 @@ textarea.field__input { resize: vertical; }
 
 .home-hero__media { position: relative; }
 .home-hero__frame { position: relative; border-radius: 26px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(35, 32, 28, .5); aspect-ratio: 4 / 5; background: var(--faq-border); }
-.home-hero__frame img { width: 100%; height: 100%; object-fit: cover; }
-.home-hero__frame > * { animation: hero-kenburns 24s ease-in-out infinite alternate; }
+.home-hero__frame img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.home-hero__frame img.is-active { opacity: 1; z-index: 1; }
+.home-hero__frame > img { animation: hero-kenburns 24s ease-in-out infinite alternate; }
 @keyframes hero-kenburns { from { transform: scale(1); } to { transform: scale(1.09); } }
-@media (prefers-reduced-motion: reduce) { .home-hero__frame > * { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .home-hero__frame > img { animation: none; } }
+
+.home-hero__arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 42px; height: 42px; border-radius: 50%; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255, 255, 255, .85); backdrop-filter: blur(4px);
+  border: none; cursor: pointer; color: var(--ink);
+  transition: background .2s, transform .2s;
+}
+.home-hero__arrow:hover { background: #fff; transform: translateY(-50%) scale(1.07); }
+.home-hero__arrow:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.home-hero__arrow--prev { left: 14px; }
+.home-hero__arrow--next { right: 14px; }
+.home-hero__arrow .lucide { width: 20px; height: 20px; }
+@media (max-width: 640px) { .home-hero__arrow { width: 36px; height: 36px; } }
+
+.home-hero__carousel-dots {
+  position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 2;
+}
+.home-hero__carousel-dot {
+  width: 9px; height: 9px; border-radius: 50%; padding: 0;
+  background: rgba(255, 255, 255, .55); border: none; cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.home-hero__carousel-dot:hover { background: rgba(255, 255, 255, .8); }
+.home-hero__carousel-dot.is-active { background: var(--terracota); transform: scale(1.2); }
 .home-hero__badge-card {
   position: absolute; left: -22px; bottom: 38px;
   display: flex; align-items: center; gap: 12px;

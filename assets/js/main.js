@@ -47,6 +47,44 @@
     // in assets/js/scroll-animations.js, for one consistent animation engine
     // across the whole site instead of splitting it between two systems.
 
+    // Home hero carousel: auto-advancing image crossfade every 3s, with
+    // prev/next arrows and dot navigation. Pauses on hover/focus, and stays
+    // on the first slide (no rotation) if the visitor prefers reduced motion.
+    var heroCarousel = document.querySelector('[data-hero-carousel]');
+    if (heroCarousel) {
+      var heroSlides = qa('[data-hero-slide]');
+      var heroDots = qa('[data-hero-dot]');
+      var heroCurrent = 0;
+      var heroTimer = null;
+
+      var heroGoTo = function (index) {
+        heroSlides[heroCurrent].classList.remove('is-active');
+        heroDots[heroCurrent].classList.remove('is-active');
+        heroCurrent = (index + heroSlides.length) % heroSlides.length;
+        heroSlides[heroCurrent].classList.add('is-active');
+        heroDots[heroCurrent].classList.add('is-active');
+      };
+      var heroStart = function () {
+        if (reduceMotion || heroSlides.length < 2) return;
+        heroStop();
+        heroTimer = setInterval(function () { heroGoTo(heroCurrent + 1); }, 3000);
+      };
+      var heroStop = function () { if (heroTimer) { clearInterval(heroTimer); heroTimer = null; } };
+
+      heroDots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { heroGoTo(i); heroStart(); });
+      });
+      var heroPrevBtn = document.querySelector('[data-hero-prev]');
+      var heroNextBtn = document.querySelector('[data-hero-next]');
+      if (heroPrevBtn) heroPrevBtn.addEventListener('click', function () { heroGoTo(heroCurrent - 1); heroStart(); });
+      if (heroNextBtn) heroNextBtn.addEventListener('click', function () { heroGoTo(heroCurrent + 1); heroStart(); });
+      heroCarousel.addEventListener('mouseenter', heroStop);
+      heroCarousel.addEventListener('mouseleave', heroStart);
+      heroCarousel.addEventListener('focusin', heroStop);
+      heroCarousel.addEventListener('focusout', heroStart);
+      heroStart();
+    }
+
     // Testimonial carousel: auto-advancing crossfade, pauses on hover/focus,
     // and stays on a single slide (no rotation) if the visitor prefers reduced motion.
     var carousel = document.querySelector('[data-testimonial-carousel]');
