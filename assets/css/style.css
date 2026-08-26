@@ -57,7 +57,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-wrap: pretty;
   overflow-x: hidden;
-  padding-bottom: 68px;
+  padding-bottom: 50px;
 }
 a { color: var(--green); text-decoration: none; }
 a:hover { color: var(--gold); }
@@ -178,7 +178,7 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 860px) {
   .site-nav__links { display: none; }
-  .site-nav__burger { display: inline-flex; }
+  .site-nav__burger { display: inline-flex; margin-left: auto; }
 }
 
 /* ── Footer ───────────────────────────────────────────────────────────── */
@@ -453,18 +453,18 @@ textarea.field__input { resize: vertical; }
 .sticky-cta-bar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 55;
   display: flex; align-items: center; justify-content: center;
-  gap: 18px;
+  gap: 14px;
   background: var(--terracota);
   color: var(--bg);
-  padding: 14px clamp(16px, 4vw, 32px);
-  padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  padding: 9px clamp(16px, 4vw, 32px);
+  padding-bottom: calc(9px + env(safe-area-inset-bottom, 0px));
   box-shadow: 0 -10px 30px -10px rgba(0, 0, 0, .25);
 }
-.sticky-cta-bar__text { font-size: 15px; font-weight: 600; }
+.sticky-cta-bar__text { font-size: 13px; font-weight: 600; }
 .sticky-cta-bar__btn {
   background: var(--bg); color: var(--ink);
-  font-size: 14px; font-weight: 700;
-  padding: 10px 24px; border-radius: 999px;
+  font-size: 12.5px; font-weight: 700;
+  padding: 7px 18px; border-radius: 999px;
   white-space: nowrap;
   transition: transform .2s, background .2s;
 }
