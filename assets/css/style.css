@@ -623,9 +623,13 @@ textarea.field__input { resize: vertical; }
   min-height: min(88vh, 800px);
   background: var(--green);
 }
+/* Neutral black scrim (not the brand green) — PM asked to keep the green
+   in the header but remove the green tint from the carousel photos
+   themselves. Opacity stops unchanged from the previous version so
+   heading/lead contrast over the photos is unaffected. */
 .home-hero__overlay {
   position: absolute; inset: 0; z-index: 2; pointer-events: none;
-  background: linear-gradient(105deg, rgba(7, 31, 26, .86) 0%, rgba(7, 31, 26, .58) 38%, rgba(7, 31, 26, .2) 68%, rgba(7, 31, 26, .02) 100%);
+  background: linear-gradient(105deg, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .5) 38%, rgba(0, 0, 0, .16) 68%, rgba(0, 0, 0, .02) 100%);
 }
 .home-hero__inner { position: relative; z-index: 3; max-width: 1320px; margin: 0 auto; padding: clamp(90px, 13vw, 150px) clamp(20px, 5vw, 64px) clamp(64px, 8vw, 100px); width: 100%; }
 .home-hero__content { max-width: 720px; margin: 0 auto; text-align: center; }
