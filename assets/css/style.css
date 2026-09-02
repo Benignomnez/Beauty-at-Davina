@@ -396,6 +396,8 @@ textarea.field__input { resize: vertical; }
 .contact-info__row .lucide { width: 22px; height: 22px; color: var(--green); flex: none; margin-top: 2px; }
 .contact-info__label { font-weight: 700; font-size: 16px; }
 .contact-info__value { font-size: 15.5px; color: var(--ink-mute); margin-top: 3px; line-height: 1.7; }
+.contact-info__value a { color: inherit; }
+.contact-info__value a:hover { color: var(--green); }
 
 .contact-map {
   margin-top: 20px;
