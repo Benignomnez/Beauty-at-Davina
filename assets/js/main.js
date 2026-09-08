@@ -185,6 +185,7 @@
           headers: { 'Accept': 'application/json' }
         }).then(function (response) {
           if (!response.ok) throw new Error('Form submission failed');
+          form.reset();
           if (note) note.classList.add('is-visible');
           // Only lock the form down on confirmed success — on failure the
           // visitor's entries must stay editable so they can retry.
