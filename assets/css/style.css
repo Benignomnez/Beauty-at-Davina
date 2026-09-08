@@ -367,6 +367,17 @@ textarea.field__input { resize: vertical; }
 }
 .form-note.is-visible { display: block; }
 
+.form-error {
+  display: none;
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #B3261E;
+}
+.form-error.is-visible { display: block; }
+.form-error a { color: inherit; text-decoration: underline; }
+
 /* Honeypot: invisible to real visitors, catnip for basic bots */
 .field-honeypot {
   position: absolute;

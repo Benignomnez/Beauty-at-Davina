@@ -158,9 +158,16 @@
       chips[0].classList.add('is-active');
     }
 
-    // Contact form: client-side only — show a thank-you note, no data is sent
+    // Contact form: submits via fetch to the Formspree endpoint in the
+    // form's action attribute, so the page never leaves and we can show a
+    // real success/error state. The action/method attributes stay on the
+    // <form> itself as a plain-POST fallback for visitors without JS.
     var form = document.querySelector('[data-form]');
     if (form) {
+      var submitBtn = form.querySelector('.btn-submit');
+      var note = form.querySelector('[data-formnote]');
+      var errorNote = form.querySelector('[data-formerror]');
+
       form.addEventListener('submit', function (ev) {
         ev.preventDefault();
         // Honeypot: a real visitor never sees or fills this field. If it's
@@ -168,10 +175,25 @@
         // revealing the catch just teaches bots to skip that field next time.
         var honeypot = form.querySelector('input[name="company"]');
         if (honeypot && honeypot.value) return;
-        var note = form.querySelector('[data-formnote]');
-        if (note) note.classList.add('is-visible');
-        Array.prototype.slice.call(form.querySelectorAll('input, textarea, select, button'))
-          .forEach(function (el) { el.setAttribute('disabled', ''); });
+
+        if (errorNote) errorNote.classList.remove('is-visible');
+        if (submitBtn) submitBtn.setAttribute('disabled', '');
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+          if (!response.ok) throw new Error('Form submission failed');
+          if (note) note.classList.add('is-visible');
+          // Only lock the form down on confirmed success — on failure the
+          // visitor's entries must stay editable so they can retry.
+          Array.prototype.slice.call(form.querySelectorAll('input, textarea, select, button'))
+            .forEach(function (el) { el.setAttribute('disabled', ''); });
+        }).catch(function () {
+          if (submitBtn) submitBtn.removeAttribute('disabled');
+          if (errorNote) errorNote.classList.add('is-visible');
+        });
       });
     }
   });
