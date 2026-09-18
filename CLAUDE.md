@@ -26,13 +26,40 @@ git ls-remote --heads origin
   one, ask first — but flag this dependency immediately rather than silently reporting
   a fix as "pushed" when it only reached your task branch.
 
-## Root cause / real fix (not yet done)
+## PR-merge workflow (adopted 2026-09-18)
 
-This is a workaround, not a fix. The actual fix is one of:
-1. In Vercel's project settings, point Production Branch at whatever branch is meant to
-   be the permanent trunk (ideally after establishing a real `main`), or
-2. Adopt a normal PR-merge workflow into a stable branch, with Vercel tracking that
-   branch.
+`claude/contact-page-impl-s1prl6` is trunk. Going forward, work does not get pushed to
+it directly — it lands via PR:
 
-Whoever has Vercel dashboard access should make one of these changes — until then, this
-file is the only thing preventing fixes from silently not deploying.
+1. Create a feature branch off `claude/contact-page-impl-s1prl6` (not off whatever
+   throwaway branch a task session happens to be assigned):
+   ```
+   git fetch origin claude/contact-page-impl-s1prl6
+   git checkout -b claude/<feature-slug> origin/claude/contact-page-impl-s1prl6
+   ```
+2. Commit there, push, open a PR with base `claude/contact-page-impl-s1prl6`.
+3. Merge the PR. Vercel deploys automatically since it already tracks that branch.
+
+If a task's own instructions pin you to a different branch name, still open the PR from
+that branch into `claude/contact-page-impl-s1prl6` rather than fast-forward-pushing
+directly into it — the fast-forward-push escape hatch above stays documented for
+whoever needs to unblock a stuck deploy, but it's the exception now, not the default.
+
+**This is process discipline, not an enforced rule.** No tool available to Claude Code
+sessions in this repo can set GitHub branch protection or change the default branch —
+that needs a human with repo-admin access. Until someone does the one-time setup below,
+a direct push to `claude/contact-page-impl-s1prl6` will still silently succeed.
+
+## One-time manual setup still needed (repo admin, ~2 min)
+
+To make the above actually enforced instead of just documented:
+
+1. GitHub → repo → **Settings → Branches → Add branch protection rule**
+   - Branch name pattern: `claude/contact-page-impl-s1prl6`
+   - Enable "Require a pull request before merging"
+   - (Optional) "Require status checks to pass" once/if CI exists
+2. GitHub → repo → **Settings → General → Default branch** → set it to
+   `claude/contact-page-impl-s1prl6`, so new PRs default to the right base.
+3. Longer-term, real fix: rename this to `main` (or create a proper `main`) once it's
+   safe to touch Vercel's Production Branch setting to match — renaming today without
+   also updating Vercel would break deploys, so don't do it until that's coordinated.
