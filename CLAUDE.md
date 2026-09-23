@@ -63,3 +63,31 @@ To make the above actually enforced instead of just documented:
 3. Longer-term, real fix: rename this to `main` (or create a proper `main`) once it's
    safe to touch Vercel's Production Branch setting to match — renaming today without
    also updating Vercel would break deploys, so don't do it until that's coordinated.
+
+# Content style — no hyphens in body copy (client directive, 2026-09-23)
+
+The client does not want hyphens joining words in visible site copy — headings, body
+text, card labels, alt text, meta descriptions. Precedent: they'd already asked for
+"long-term" → "long term" in an earlier round; they then generalized it to "avoid using
+[hyphens] from now on" after spotting "day-to-day" live. Write new copy without them
+(`physician led`, `board certified`, `natural looking`, `one on one`, `check ins`,
+etc.) and fix any that turn up in existing copy the same way.
+
+**Exceptions — do not strip these:**
+- Real proper nouns: place names (`Miami-Dade`), person names (`Lopez-Luciano`). These
+  aren't stylistic hyphens, they're part of the actual name.
+- Established medical/idiomatic terms where the hyphen carries meaning and removing it
+  reads as a mistake or changes the term: `Platelet-rich plasma` (the standard
+  expansion of PRP), `one-size-fits-all`. Confirm with the user before touching these
+  rather than guessing either way.
+- Numeric ranges using an en dash (`–`), e.g. `10–14 days`, `45 min–1 hour` — different
+  character, different job (a range separator, not a word-joining hyphen). Left alone
+  unless the user says otherwise.
+- Anything that isn't visible copy: CSS classes, `id`/`href` anchors, `data-*`
+  attributes, image filenames, lucide icon names, inline style properties. A hyphen in
+  `id="weight-loss"` or `class="feat-card"` is code, not prose — never "fix" these.
+
+This does **not** cover em dashes (`—` / `&mdash;`) used as a heading/subheading
+separator (e.g. `Glow Out &mdash; Injectables`, `Botox &mdash; Forehead`) — that's a
+separate, pre-existing design convention, untouched by this directive unless the client
+says otherwise.
