@@ -645,20 +645,15 @@ textarea.field__input { resize: vertical; }
   background: linear-gradient(105deg, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .5) 38%, rgba(0, 0, 0, .16) 68%, rgba(0, 0, 0, .02) 100%);
 }
 .home-hero__inner { position: relative; z-index: 3; max-width: 1320px; margin: 0 auto; padding: clamp(90px, 13vw, 150px) clamp(20px, 5vw, 64px) clamp(64px, 8vw, 100px); width: 100%; }
-.home-hero__content { max-width: 720px; margin: 0 auto; text-align: center; }
+.home-hero__content { max-width: 720px; text-align: left; }
 
 .home-hero__title { font-family: var(--font-serif); font-weight: 500; font-size: clamp(34px, 5vw, 62px); line-height: 1.06; letter-spacing: -.015em; margin: 0; color: var(--bg); }
 .home-hero__title em { font-style: italic; color: var(--gold); }
-.home-hero__lead { max-width: 32rem; font-size: 17px; line-height: 1.65; color: var(--on-dark-muted); margin: 20px auto 0; }
-.home-hero__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 32px; }
+.home-hero__lead { max-width: 32rem; font-size: 17px; line-height: 1.65; color: var(--on-dark-muted); margin: 20px 0 0; }
+.home-hero__actions { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 14px; margin-top: 32px; }
 .home-hero__actions .btn-pill--dark { box-shadow: 0 18px 40px -20px rgba(0, 0, 0, .5); }
 .home-hero__actions .btn-pill--outline { color: var(--bg); border-color: rgba(255, 255, 255, .35); }
 .home-hero__actions .btn-pill--outline:hover { background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .6); }
-
-.home-hero__stats { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 26px; margin-top: 40px; }
-.home-hero__stat-num { font-family: var(--font-serif); font-size: 30px; font-weight: 500; color: var(--gold); }
-.home-hero__stat-label { font-size: 13.5px; letter-spacing: .06em; color: var(--on-dark-muted); }
-.home-hero__stat-divider { width: 1px; height: 34px; background: rgba(255, 255, 255, .2); }
 
 .home-hero__slides { position: absolute; inset: 0; z-index: 0; }
 .home-hero__slide {
@@ -676,15 +671,15 @@ textarea.field__input { resize: vertical; }
 @keyframes hero-kenburns { from { transform: scale(1); } to { transform: scale(1.09); } }
 @media (prefers-reduced-motion: reduce) { .home-hero__slide img { animation: none; } .home-hero__slide { transition: none; } }
 
-/* Arrows + dots sit in the normal content flow, right after the stats
+/* Arrows + dots sit in the normal content flow, right after the actions
    row, rather than absolutely anchored to the hero's bottom edge. A
    fixed bottom offset broke at different viewport heights/widths — the
    hero's height is driven by stacked text, so any fixed px value either
-   collided with the stats above it or with the fixed .sticky-cta-bar
+   collided with the content above it or with the fixed .sticky-cta-bar
    below it depending on screen size. Flow positioning stays correctly
    spaced from both at any size. */
 .home-hero__controls {
-  display: flex; align-items: center; justify-content: center; gap: 18px;
+  display: flex; align-items: center; justify-content: flex-start; gap: 18px;
   margin-top: 40px;
 }
 .home-hero__arrow {
@@ -700,19 +695,17 @@ textarea.field__input { resize: vertical; }
 @media (max-width: 480px) { .home-hero__arrow { width: 34px; height: 34px; } .home-hero__arrow .lucide { width: 17px; height: 17px; } }
 
 /* On short viewports the stacked hero content (padding + heading + lead +
-   actions + stats + controls) can run long enough that the controls land
+   actions + controls) can run long enough that the controls land
    in the same band the fixed .sticky-cta-bar always occupies at the
    bottom of the screen. Tightening the vertical rhythm here keeps the
    controls clear of the bar without touching desktop/tablet, where there
    is already plenty of headroom. */
 @media (max-height: 900px) {
   .home-hero__inner { padding-top: 56px; }
-  .home-hero__stats { margin-top: 20px; }
   .home-hero__controls { margin-top: 20px; }
 }
 @media (max-height: 830px) {
   .home-hero__inner { padding-top: 44px; }
-  .home-hero__stats { margin-top: 14px; }
   .home-hero__controls { margin-top: 14px; }
 }
 /* Below this height, tightened spacing still isn't enough room to clear
