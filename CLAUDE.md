@@ -70,8 +70,17 @@ The client does not want hyphens joining words in visible site copy — headings
 text, card labels, alt text, meta descriptions. Precedent: they'd already asked for
 "long-term" → "long term" in an earlier round; they then generalized it to "avoid using
 [hyphens] from now on" after spotting "day-to-day" live. Write new copy without them
-(`physician led`, `board certified`, `natural looking`, `one on one`, `check ins`,
-etc.) and fix any that turn up in existing copy the same way.
+(`natural looking`, `one on one`, `check ins`, etc.) and fix any that turn up in
+existing copy the same way.
+
+**Standing exception, added 2026-09-25 — these three go the other way:**
+`board-certified`, `physician-led`, `physician-supervised` are **hyphenated**, not
+spaced. A later client-provided revisions doc explicitly asked to correct "board
+certified physician" back to "board-certified physician" and check consistency across
+all three terms. This directly reverses part of the no-hyphen sweep for just these
+three phrases — everything else that sweep touched is unaffected. If either directive
+seems to have shifted again, don't guess: confirm with the client before changing these
+three back, since they've already flipped once.
 
 **Exceptions — do not strip these:**
 - Real proper nouns: place names (`Miami-Dade`), person names (`Lopez-Luciano`). These
