@@ -940,30 +940,6 @@ textarea.field__input { resize: vertical; }
 .team-card__role { font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--terracota-dark); margin-top: 5px; }
 .team-card p { font-size: 15px; line-height: 1.6; color: var(--ink-mute); margin: 12px 0 0; }
 
-.home-testimonials { background: var(--faq-bg); border-top: 1px solid var(--faq-border); border-bottom: 1px solid var(--faq-border); }
-.testimonial-carousel { position: relative; max-width: 720px; margin: 0 auto; text-align: center; min-height: 220px; }
-.testimonial-slide {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column; align-items: center;
-  opacity: 0; visibility: hidden;
-  transition: opacity .7s ease;
-}
-.testimonial-slide.is-active { position: relative; opacity: 1; visibility: visible; }
-.testimonial-stars { color: var(--gold-dark); font-size: 17px; letter-spacing: .12em; margin-bottom: 18px; }
-.testimonial-quote { font-family: var(--font-serif); font-weight: 500; font-style: italic; font-size: clamp(19px, 2.2vw, 25px); line-height: 1.5; color: var(--ink); max-width: 56ch; margin: 0 0 20px; }
-.testimonial-author { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-.testimonial-dots { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
-.testimonial-dot {
-  width: 9px; height: 9px; border-radius: 50%;
-  background: var(--chip-border); border: 0; padding: 0; cursor: pointer;
-  transition: background .3s ease, transform .3s ease;
-}
-.testimonial-dot.is-active { background: var(--green); transform: scale(1.2); }
-@media (prefers-reduced-motion: reduce) {
-  .testimonial-slide { transition: none; }
-  .testimonial-dot { transition: none; }
-}
-
 .home-journey__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 @media (max-width: 980px) { .home-journey__grid { grid-template-columns: repeat(2, 1fr); } }
 .journey-step { position: relative; padding-top: 30px; }
@@ -1089,11 +1065,11 @@ textarea.field__input { resize: vertical; }
 .about-quote__role { font-size: 14px; color: var(--gold-on-dark); }
 
 .about-stats__grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 20px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 20px;
+  max-width: 560px; margin: 0 auto;
   border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);
   padding: 44px 0;
 }
-@media (max-width: 980px) { .about-stats__grid { grid-template-columns: repeat(2, 1fr); } }
 .about-stat__num { font-family: var(--font-serif); font-size: clamp(38px, 4.5vw, 56px); font-weight: 500; color: var(--green); line-height: 1; }
 .about-stat__label { font-size: 14.5px; color: var(--muted); margin-top: 8px; }
 
