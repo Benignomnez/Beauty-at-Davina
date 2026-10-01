@@ -710,6 +710,22 @@ textarea.field__input { resize: vertical; }
 @keyframes hero-kenburns { from { transform: scale(1); } to { transform: scale(1.09); } }
 @media (prefers-reduced-motion: reduce) { .home-hero__slide img { animation: none; } .home-hero__slide { transition: none; } }
 
+/* Below 620px the full-height overlay treatment backfires: centering the
+   text block vertically over the photo forces the photo band to stretch
+   to match the text's natural height, so on a tall/narrow phone viewport
+   a wide (3:1) banner photo gets cropped down to a sliver — losing the
+   actual treatment/tool content and leaving only a generic face closeup.
+   Below this width the photo becomes its own short, fixed-ratio band
+   (same 3:2 proportions regardless of exact phone width, so the crop
+   window stays consistent), with the text stacked below it in normal
+   flow instead of overlaid on top. */
+@media (max-width: 620px) {
+  .home-hero { display: block; min-height: auto; }
+  .home-hero__slides { position: relative; inset: auto; aspect-ratio: 3 / 2; }
+  .home-hero__overlay { display: none; }
+  .home-hero__inner { padding: 28px 20px 40px; }
+}
+
 /* Arrows + dots sit in the normal content flow, right after the actions
    row, rather than absolutely anchored to the hero's bottom edge. A
    fixed bottom offset broke at different viewport heights/widths — the
