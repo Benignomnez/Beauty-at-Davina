@@ -111,41 +111,6 @@
       heroStart();
     }
 
-    // Testimonial carousel: auto-advancing crossfade, pauses on hover/focus,
-    // and stays on a single slide (no rotation) if the visitor prefers reduced motion.
-    var carousel = document.querySelector('[data-testimonial-carousel]');
-    if (carousel) {
-      var slides = qa('[data-testimonial-slide]');
-      var dots = qa('[data-testimonial-dot]');
-      var current = 0;
-      var timer = null;
-
-      var goTo = function (index) {
-        slides[current].classList.remove('is-active');
-        dots[current].classList.remove('is-active');
-        dots[current].setAttribute('aria-selected', 'false');
-        current = (index + slides.length) % slides.length;
-        slides[current].classList.add('is-active');
-        dots[current].classList.add('is-active');
-        dots[current].setAttribute('aria-selected', 'true');
-      };
-      var start = function () {
-        if (reduceMotion || slides.length < 2) return;
-        stop();
-        timer = setInterval(function () { goTo(current + 1); }, 6500);
-      };
-      var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
-
-      dots.forEach(function (dot, i) {
-        dot.addEventListener('click', function () { goTo(i); start(); });
-      });
-      carousel.addEventListener('mouseenter', stop);
-      carousel.addEventListener('mouseleave', start);
-      carousel.addEventListener('focusin', stop);
-      carousel.addEventListener('focusout', start);
-      start();
-    }
-
     // Gallery filter chips: visual active state only (no data-side category filter)
     var chips = qa('[data-chip]');
     if (chips.length) {
