@@ -111,13 +111,23 @@
       heroStart();
     }
 
-    // Gallery filter chips: visual active state only (no data-side category filter)
+    // Gallery filter chips: filters the tile grid by data-category, not just
+    // a visual active state. "all" (or a chip with no data-filter) shows
+    // every tile; any other filter hides tiles whose data-category doesn't
+    // match.
     var chips = qa('[data-chip]');
+    var galleryItems = qa('.gallery-grid__item');
     if (chips.length) {
       chips.forEach(function (chip) {
         chip.addEventListener('click', function () {
           chips.forEach(function (c) { c.classList.remove('is-active'); });
           chip.classList.add('is-active');
+
+          var filter = chip.getAttribute('data-filter') || 'all';
+          galleryItems.forEach(function (item) {
+            var show = filter === 'all' || item.getAttribute('data-category') === filter;
+            item.classList.toggle('is-hidden', !show);
+          });
         });
       });
       chips[0].classList.add('is-active');
