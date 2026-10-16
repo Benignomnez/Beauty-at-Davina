@@ -133,17 +133,6 @@
       chips[0].classList.add('is-active');
     }
 
-    // Instagram feed videos: autoplay/loop normally, but a visitor who
-    // prefers reduced motion gets the static poster frame instead.
-    var igVideos = qa('.instagram-grid__item video');
-    if (igVideos.length) {
-      if (reduceMotion) {
-        igVideos.forEach(function (v) { v.pause(); v.removeAttribute('autoplay'); });
-      } else {
-        igVideos.forEach(function (v) { v.play().catch(function () {}); });
-      }
-    }
-
     // Contact form: submits via fetch to the Formspree endpoint in the
     // form's action attribute, so the page never leaves and we can show a
     // real success/error state. The action/method attributes stay on the
